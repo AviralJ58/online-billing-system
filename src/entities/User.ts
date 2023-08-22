@@ -17,6 +17,9 @@ export class User {
     @Column()
     password: string;
 
+    @Column({ default: 'customer' }) // Default role is 'customer'
+    role: string;
+
     @OneToMany(() => CartItem, cartItem => cartItem.user)
     cartItems: CartItem[];
 
