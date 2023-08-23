@@ -11,7 +11,7 @@ exports.ds = new typeorm_1.DataSource({
     username: process.env.DB_USERNAME,
     password: process.env.DB_PASSWORD,
     database: process.env.DATABASE,
-    entities: ["dist/entities/*.js"],
+    entities: ["dist/entities/*{.js,.ts}"],
     logging: true,
     synchronize: true,
 });
