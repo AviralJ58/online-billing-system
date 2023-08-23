@@ -1,5 +1,5 @@
 // form controller for login and signup
-import { Request, Response } from 'express';
+import e, { Request, Response } from 'express';
 import { User } from '../entities/User';
 import { ds } from '../data-source';
 import * as jwt from 'jsonwebtoken';
@@ -11,7 +11,7 @@ class UserController {
         // check if username and password are set
         let { username, password } = req.body;
         if (!(username && password)) {
-            res.status(400).send();
+            res.status(400).send("Please provide username and password");
         }
 
         // get user from database
@@ -21,7 +21,7 @@ class UserController {
             user = await userRepository.findOneOrFail({ where: { username } });
             // check if encrypted password match
             if (!bcrypt.compareSync(password, user.password)) {
-                res.status(401).send();
+                res.status(401).send("Incorrect password");
                 return;
             }
 
@@ -43,7 +43,7 @@ class UserController {
                 }
             });
         } catch (error) {
-            res.status(401).send();
+            res.status(401).send("User not found");
         }
     }
 

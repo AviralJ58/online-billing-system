@@ -77,7 +77,7 @@ var UserController = /** @class */ (function () {
                     case 0:
                         _a = req.body, username = _a.username, password = _a.password;
                         if (!(username && password)) {
-                            res.status(400).send();
+                            res.status(400).send("Please provide username and password");
                         }
                         userRepository = data_source_1.ds.getRepository(User_1.User);
                         _b.label = 1;
@@ -88,7 +88,7 @@ var UserController = /** @class */ (function () {
                         user = _b.sent();
                         // check if encrypted password match
                         if (!bcryptjs_1.default.compareSync(password, user.password)) {
-                            res.status(401).send();
+                            res.status(401).send("Incorrect password");
                             return [2 /*return*/];
                         }
                         token = jwt.sign({ userId: user.id, username: user.username }, process.env.JWT_SECRET, { expiresIn: '1h' });
@@ -105,7 +105,7 @@ var UserController = /** @class */ (function () {
                         return [3 /*break*/, 4];
                     case 3:
                         error_1 = _b.sent();
-                        res.status(401).send();
+                        res.status(401).send("User not found");
                         return [3 /*break*/, 4];
                     case 4: return [2 /*return*/];
                 }
