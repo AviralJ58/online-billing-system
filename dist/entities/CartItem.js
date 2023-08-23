@@ -19,8 +19,8 @@ var CartItem = exports.CartItem = /** @class */ (function () {
     function CartItem() {
     }
     __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", Number)
+        (0, typeorm_1.PrimaryGeneratedColumn)("uuid"),
+        __metadata("design:type", String)
     ], CartItem.prototype, "id", void 0);
     __decorate([
         (0, typeorm_1.ManyToOne)(function () { return User_1.User; }, function (user) { return user.cartItems; }),

@@ -6,8 +6,8 @@ import { Service } from './Service';
 
 @Entity()
 export class CartItem {
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn("uuid")
+    id: string;
 
     @ManyToOne(() => User, user => user.cartItems)
     user: User;

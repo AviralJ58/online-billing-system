@@ -15,9 +15,6 @@ export class Product {
     @Column('numeric')
     price: number;
 
-    @Column('numeric')
-    stock: number;
-
     @ManyToMany(() => OrderItem, orderItem => orderItem.product)
     @JoinTable()
     orderItems: OrderItem[];

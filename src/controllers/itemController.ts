@@ -77,7 +77,6 @@ class ItemController {
         let product = new Product();
         product.name = req.body.name;
         product.price = req.body.price;
-        product.stock = req.body.stock;
         product.id = uuidv4();
 
         // validate if the parameters are ok
@@ -90,9 +89,7 @@ class ItemController {
         try {
             const prod = await prodRepository.findOne({ where: { name: product.name } });
             if (prod) {
-                // update stock
-                prodRepository.update(prod.id, { stock: product.stock });
-                res.status(201).send(product);
+                res.status(409).send("Product already exists");
                 return;
             }
             await prodRepository.save(product);
@@ -140,7 +137,6 @@ class ItemController {
             product = await prodRepository.findOneOrFail({ where: { id: id } });
             product.name = req.body.name;
             product.price = req.body.price;
-            product.stock = req.body.stock;
 
             // validate if the parameters are ok
             const errors = await validate(product);
@@ -149,7 +145,7 @@ class ItemController {
                 return;
             }
 
-            await prodRepository.update(product.id, { name: product.name, price: product.price, stock: product.stock });
+            await prodRepository.update(product.id, { name: product.name, price: product.price });
             res.status(200).send("Updated successfully");
         } catch (error) {
             res.status(401).send("Item not found");

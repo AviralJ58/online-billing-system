@@ -172,7 +172,6 @@ var ItemController = /** @class */ (function () {
                         product = new Product_1.Product();
                         product.name = req.body.name;
                         product.price = req.body.price;
-                        product.stock = req.body.stock;
                         product.id = (0, uuid_1.v4)();
                         return [4 /*yield*/, (0, class_validator_1.validate)(product)];
                     case 1:
@@ -188,9 +187,7 @@ var ItemController = /** @class */ (function () {
                     case 3:
                         prod = _a.sent();
                         if (prod) {
-                            // update stock
-                            prodRepository.update(prod.id, { stock: product.stock });
-                            res.status(201).send(product);
+                            res.status(409).send("Product already exists");
                             return [2 /*return*/];
                         }
                         return [4 /*yield*/, prodRepository.save(product)];
@@ -262,7 +259,6 @@ var ItemController = /** @class */ (function () {
                         product = _a.sent();
                         product.name = req.body.name;
                         product.price = req.body.price;
-                        product.stock = req.body.stock;
                         return [4 /*yield*/, (0, class_validator_1.validate)(product)];
                     case 3:
                         errors = _a.sent();
@@ -270,7 +266,7 @@ var ItemController = /** @class */ (function () {
                             res.status(400).send(errors);
                             return [2 /*return*/];
                         }
-                        return [4 /*yield*/, prodRepository.update(product.id, { name: product.name, price: product.price, stock: product.stock })];
+                        return [4 /*yield*/, prodRepository.update(product.id, { name: product.name, price: product.price })];
                     case 4:
                         _a.sent();
                         res.status(200).send("Updated successfully");

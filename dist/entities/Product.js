@@ -30,10 +30,6 @@ var Product = exports.Product = /** @class */ (function () {
         __metadata("design:type", Number)
     ], Product.prototype, "price", void 0);
     __decorate([
-        (0, typeorm_1.Column)('numeric'),
-        __metadata("design:type", Number)
-    ], Product.prototype, "stock", void 0);
-    __decorate([
         (0, typeorm_1.ManyToMany)(function () { return OrderItem_1.OrderItem; }, function (orderItem) { return orderItem.product; }),
         (0, typeorm_1.JoinTable)(),
         __metadata("design:type", Array)
