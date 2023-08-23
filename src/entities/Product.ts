@@ -5,14 +5,18 @@ import { CartItem } from './CartItem';
 
 @Entity()
 export class Product {
-    @PrimaryGeneratedColumn()
-    id: number;
+    // keep uuid as primary and autogenerate it
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
 
     @Column()
     name: string;
 
     @Column('numeric')
     price: number;
+
+    @Column('numeric')
+    stock: number;
 
     @ManyToMany(() => OrderItem, orderItem => orderItem.product)
     @JoinTable()

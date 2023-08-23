@@ -23,6 +23,7 @@ app.get("/", function (req, res) {
     res.send("Hello World!");
 });
 app.use("/user", require("./routes/userRoute"));
+app.use("/item", require("./routes/itemRoute"));
 app.listen(3000, function () {
     console.log("Server started on port 3000!");
 });

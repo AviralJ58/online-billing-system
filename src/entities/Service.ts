@@ -5,8 +5,8 @@ import { CartItem } from './CartItem';
 
 @Entity()
 export class Service {
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
 
     @Column()
     name: string;

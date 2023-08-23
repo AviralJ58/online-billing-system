@@ -18,8 +18,8 @@ var Product = exports.Product = /** @class */ (function () {
     function Product() {
     }
     __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", Number)
+        (0, typeorm_1.PrimaryGeneratedColumn)('uuid'),
+        __metadata("design:type", String)
     ], Product.prototype, "id", void 0);
     __decorate([
         (0, typeorm_1.Column)(),
@@ -29,6 +29,10 @@ var Product = exports.Product = /** @class */ (function () {
         (0, typeorm_1.Column)('numeric'),
         __metadata("design:type", Number)
     ], Product.prototype, "price", void 0);
+    __decorate([
+        (0, typeorm_1.Column)('numeric'),
+        __metadata("design:type", Number)
+    ], Product.prototype, "stock", void 0);
     __decorate([
         (0, typeorm_1.ManyToMany)(function () { return OrderItem_1.OrderItem; }, function (orderItem) { return orderItem.product; }),
         (0, typeorm_1.JoinTable)(),
