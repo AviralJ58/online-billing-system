@@ -11,6 +11,8 @@ Welcome to the Online Billing System repository! This project provides an online
   - [Items Collection](#items-collection)
   - [Cart Collection](#cart-collection)
   - [Order Collection](#order-collection)
+- [Requirements Satisfied](#requirements-satisfied)
+- [Submission Details](#submission-details)
 
 ## Getting Started
 
