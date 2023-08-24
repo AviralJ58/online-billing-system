@@ -44,7 +44,7 @@ The server is additionally deployed on `https://online-billing-system-5iua.onren
 
 ## API Documentation
 
-The API documentation is organized into separate Postman collections for each module: User, Items, Cart, and Order. Below are the links to the documentation for each collection:
+The API documentation is organized into separate Postman collections for each module: User, Items, Cart, and Order. The workspace can be found [here](https://www.postman.com/spacecraft-candidate-64913459/workspace/plotline). Below are the links to the documentation for each collection:
 
 ### User Collection
 [User API Documentation](https://documenter.getpostman.com/view/20624505/2s9Y5Wx3wE)
