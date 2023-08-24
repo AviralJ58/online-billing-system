@@ -153,10 +153,10 @@ var CartController = /** @class */ (function () {
                         services_1 = [];
                         cartItems.forEach(function (item) {
                             if (item.product) {
-                                products_1.push({ id: item.product.id, quantity: item.quantity });
+                                products_1.push({ id: item.product.id, quantity: item.quantity, price: item.product.price });
                             }
                             else {
-                                services_1.push({ id: item.service.id, quantity: item.quantity });
+                                services_1.push({ id: item.service.id, quantity: item.quantity, price: item.service.price });
                             }
                         });
                         res.send({ products: products_1, services: services_1 });

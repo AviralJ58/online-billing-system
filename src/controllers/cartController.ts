@@ -82,9 +82,9 @@ class CartController {
             const services: any = []
             cartItems.forEach(item => {
                 if (item.product) {
-                    products.push({ id: item.product.id, quantity: item.quantity })
+                    products.push({ id: item.product.id, quantity: item.quantity, price: item.product.price })
                 } else {
-                    services.push({ id: item.service.id, quantity: item.quantity })
+                    services.push({ id: item.service.id, quantity: item.quantity, price: item.service.price })
                 }
             });
             res.send({ products: products, services: services });

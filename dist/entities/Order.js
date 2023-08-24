@@ -18,8 +18,8 @@ var Order = exports.Order = /** @class */ (function () {
     function Order() {
     }
     __decorate([
-        (0, typeorm_1.PrimaryGeneratedColumn)(),
-        __metadata("design:type", Number)
+        (0, typeorm_1.PrimaryGeneratedColumn)("uuid"),
+        __metadata("design:type", String)
     ], Order.prototype, "id", void 0);
     __decorate([
         (0, typeorm_1.ManyToOne)(function () { return User_1.User; }, function (user) { return user.orders; }),
