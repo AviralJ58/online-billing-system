@@ -6,8 +6,8 @@ import { Service } from './Service';
 
 @Entity()
 export class OrderItem {
-    @PrimaryGeneratedColumn()
-    id: number;
+    @PrimaryGeneratedColumn("uuid")
+    id: string;
 
     @ManyToOne(() => Order, order => order.orderItems)
     order: Order;

@@ -31,6 +31,7 @@ app.get("/", (req, res) => {
 app.use("/user", require("./routes/userRoute"));
 app.use("/item", require("./routes/itemRoute"));
 app.use("/cart", require("./routes/cartRoute"));
+app.use("/order", require("./routes/orderRoute"));
 
 app.listen(3000, () => {
     console.log("Server started on port 3000!");
