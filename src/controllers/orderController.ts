@@ -1,12 +1,6 @@
-import e, { Request, Response } from "express";
+import { Request, Response } from "express";
 import { User } from "../entities/User";
 import { ds } from "../data-source";
-import * as jwt from "jsonwebtoken";
-import { validate } from "class-validator";
-import bcrypt from "bcryptjs";
-import { Product } from "../entities/Product";
-import { Service } from "../entities/Service";
-import { v4 as uuidv4 } from 'uuid';
 import { Order } from "../entities/Order";
 import { OrderItem } from "../entities/OrderItem";
 import { CartItem } from "../entities/CartItem";

@@ -1,5 +1,4 @@
-// form controller for login and signup
-import e, { Request, Response } from 'express';
+import { Request, Response } from 'express';
 import { User } from '../entities/User';
 import { ds } from '../data-source';
 import * as jwt from 'jsonwebtoken';
