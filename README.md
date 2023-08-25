@@ -43,6 +43,8 @@ To run the server locally on your machine, follow these steps:
 ### Deployment
 
 The server is additionally deployed on `https://online-billing-system-5iua.onrender.com/`.
+> **Note:**
+>  Render puts the server on sleep after few hours of inactivity. Please allow a minute for the server to start again. 
 
 ## API Documentation
 
