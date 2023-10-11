@@ -1,4 +1,4 @@
-# Online Billing System - Submission for Backend Internship at Plotline
+# Online Billing System
 
 Welcome to the Online Billing System repository! This project provides an online billing system where users can browse items, add them to their cart, and place orders.
 
@@ -135,6 +135,5 @@ Endpoints to enable the following functionalities for users:
 | Institution   | Vellore Institute of Technology, Vellore |
 | Student ID    | 20BIT0101                 |
 | Email         | aviraljain58@gmail.com   |
-| Role Applied  | Backend Internship |
 
 ---
